@@ -1,0 +1,11 @@
+<div *ngIf="(country$ | async)">
+  <div>name: {{(country$ | async).name}}</div>
+  <div>capital: {{(country$ | async).capital}}</div>
+  <div>population: {{(country$ | async).population}}</div>
+  <div>currencies: {{(country$ | async).currencies[0].name}}</div>
+  <div>flag: <img src="{{(country$ | async).flag}}" style="width: 88px;"/></div>
+</div>
+
+<div *ngIf="!(country$ | async)">
+  Please select a country
+</div>

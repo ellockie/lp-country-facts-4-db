@@ -1,0 +1,24 @@
+<!-- Background -->
+<img src="https://restcountries.eu/data/isl.svg" id="background-image--vector" alt="">
+<div id="background-image--gradient"></div>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <h1>Country Facts</h1>
+</div>
+
+<!-- Progress bar -->
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+<!-- Main content -->
+<div class="content main-container">
+  <mat-card>
+    <mat-card-title>Find basic information about various countries</mat-card-title>
+    <mat-card-content>
+      <db-selector-regions class="db-selector"></db-selector-regions>
+      <db-selector-countries class="db-selector"></db-selector-countries>
+      <mat-divider></mat-divider>
+      <db-country-info></db-country-info>
+    </mat-card-content>
+  </mat-card>
+</div>

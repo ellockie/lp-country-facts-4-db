@@ -1,0 +1,81 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+h1,
+h2 {
+  margin: 8px 0;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  padding-left: 22px;
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container {
+  max-width: 888px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-grid-list {
+  min-height: 444px
+}
+
+mat-card-content {
+  min-width: 650px;
+}
+
+mat-card {
+  background-color: #efe;
+}
+
+mat-card-title {
+  margin-bottom: 30px;
+}
+
+.mat-card .mat-divider-horizontal {
+  position: initial;
+  margin-bottom: 22px;
+}
+
+.db-selector {
+  padding: 16px;
+}
+
+.db-selector:first-child {
+  padding-left: 0;
+}
+
+#background-image--vector,
+#background-image--gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* To preserve aspect ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#background-image--gradient {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(90deg, #ffffff 50%, rgba(255, 255, 255, .9) 100%);
+}
