@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppDbSelectorComponent } from './app-selector.component';
+import AppDbSelectorComponent from './app-selector.component';
 
 describe('DbSelectorComponent', () => {
   let component: AppDbSelectorComponent;

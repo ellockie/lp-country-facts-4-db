@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppSelectorCountriesComponent } from './app-selector-countries.component';
+import AppSelectorCountriesComponent from './app-selector-countries.component';
 
 describe('DbSelectorCountriesComponent', () => {
-  let component: DbSelectorCountriesComponent;
-  let fixture: ComponentFixture<DbSelectorCountriesComponent>;
+  let component: AppSelectorCountriesComponent;
+  let fixture: ComponentFixture<AppSelectorCountriesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DbSelectorCountriesComponent],
+      declarations: [AppSelectorCountriesComponent],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DbSelectorCountriesComponent);
+    fixture = TestBed.createComponent(AppSelectorCountriesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

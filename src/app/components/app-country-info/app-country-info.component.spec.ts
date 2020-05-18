@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppCountryInfoComponent } from './app-country-info.component';
+import AppCountryInfoComponent from './app-country-info.component';
 
 describe('DbCountryInfoComponent', () => {
   let component: DbCountryInfoComponent;
@@ -8,13 +8,13 @@ describe('DbCountryInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DbCountryInfoComponent],
+      declarations: [AppCountryInfoComponent],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DbCountryInfoComponent);
+    fixture = TestBed.createComponent(AppCountryInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
