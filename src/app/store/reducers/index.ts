@@ -39,3 +39,8 @@ export const selectError = createSelector(
   selectFeature,
   fromCountriesReducer.getError,
 );
+
+export const selectLoading = createSelector(
+  selectFeature,
+  fromCountriesReducer.getLoadingInProgress,
+);
