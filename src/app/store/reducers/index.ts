@@ -29,3 +29,8 @@ export const selectCountry = createSelector(
   selectFeature,
   fromCountries.getSelectedCountry,
 );
+
+export const selectRegion = createSelector(
+  selectFeature,
+  fromCountries.getSelectedRegion,
+);

@@ -10,13 +10,17 @@ import { Country } from '../../models/country.model';
 @Component({
   selector: 'app-country-info',
   templateUrl: './app-country-info.component.html',
+  styleUrls: ['./app-country-info.component.less'],
 })
 export default class AppCountryInfoComponent implements OnInit {
+  region$: Observable<string>;
+
   country$: Observable<Country>;
 
   constructor(private store: Store<fromStore.AppState>) { }
 
   ngOnInit(): void {
     this.country$ = this.store.select(fromStore.selectCountry);
+    this.region$ = this.store.select(fromStore.selectRegion);
   }
 }

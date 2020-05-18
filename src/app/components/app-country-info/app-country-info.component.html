@@ -6,6 +6,16 @@
   <div>flag: <img src="{{(country$ | async).flag}}" style="width: 88px;"/></div>
 </div>
 
-<div *ngIf="(country$ | async) === null">
-  Please select a country
+<div
+  *ngIf="(region$ | async) === null"
+  class="message-container"
+>
+  Please select a region...
 </div>
+<div
+  *ngIf="(region$ | async) !== null && (country$ | async) === null"
+  class="message-container"
+>
+  Please select a country...
+</div>
+

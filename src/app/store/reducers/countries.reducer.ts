@@ -9,6 +9,7 @@ export interface CountriesState {
   countries: Country[];
   regionOptions: AreaSelectorOption[];
   countryOptions: AreaSelectorOption[];
+  selectedRegion: string;
   selectedCountry: Country;
   loading: boolean;
   loaded: boolean;
@@ -22,6 +23,7 @@ export const initialState: CountriesState = {
     { value: 'europe', viewValue: 'Europe' },
   ],
   countryOptions: [],
+  selectedRegion: null,
   selectedCountry: null,
   loading: false,
   loaded: false,
@@ -43,6 +45,7 @@ export function countriesReducer(
         ...state,
         loading: true,
         loadingError: false,
+        selectedRegion: action.payload,
         selectedCountry: null,
       };
     }
@@ -76,6 +79,7 @@ export function countriesReducer(
 
 export const getRegionOptions = (state: CountriesState) => state.regionOptions;
 export const getCountryOptions = (state: CountriesState) => state.countryOptions;
+export const getSelectedRegion = (state: CountriesState) => state.selectedRegion;
 export const getSelectedCountry = (state: CountriesState) => state.selectedCountry;
 // TODO: implement for a loader indicator
 export const getCountriesLoading = (state: CountriesState) => state.loading;
