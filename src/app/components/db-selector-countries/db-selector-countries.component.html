@@ -1,6 +1,6 @@
 <app-selector
   [label]="label"
   [items]="(countries$ | async)"
-  [disabled]="!(countries$ | async) || !(countries$ | async).length"
+  [disabled]="(countries$ | async).length === 0"
   (selectionChange)="onRegionChanged($event)"
 ></app-selector>

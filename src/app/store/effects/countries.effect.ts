@@ -24,11 +24,11 @@ export default class CountriesEffect {
       ofType(countryActions.LOAD_COUNTRIES),
       switchMap((action: LoadCountriesForRegion) => this.countriesService
         .getCountriesForRegion(action.payload)
-          .pipe(
-            map(
-              (countries) => new countryActions.CountriesLoadSuccess(countries),
-              catchError((error) => of(new countryActions.CountriesLoadError(error))),
-            ),
-          )),
+        .pipe(
+          map(
+            (countries) => new countryActions.CountriesLoadSuccess(countries),
+            catchError((error) => of(new countryActions.CountriesLoadError(error))),
+          ),
+        )),
     );
 }

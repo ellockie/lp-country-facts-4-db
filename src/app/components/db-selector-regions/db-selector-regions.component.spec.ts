@@ -8,9 +8,9 @@ describe('DbSelectorRegionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DbSelectorRegionsComponent ]
+      declarations: [DbSelectorRegionsComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
