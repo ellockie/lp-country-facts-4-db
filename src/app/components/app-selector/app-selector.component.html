@@ -3,6 +3,7 @@
     {{label}}
   </mat-label>
   <mat-select
+    [(value)]="selectedItem"
     [disabled]="disabled"
     (selectionChange)="valueChanged($event)"
   >
