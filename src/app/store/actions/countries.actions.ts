@@ -23,7 +23,10 @@ export class CountriesLoadSuccess implements Action {
 export class CountriesLoadError implements Action {
   readonly type = COUNTRIES_LOAD_ERROR;
 
-  constructor(public payload: any) {}
+  constructor(public payload: any) {
+    // tslint:disable-next-line:no-console
+    console.error('Data fetching error:', payload.message);
+  }
 }
 
 export class SelectCountry implements Action {

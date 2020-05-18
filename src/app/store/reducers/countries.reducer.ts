@@ -44,25 +44,27 @@ export function countriesReducer(
       return {
         ...state,
         loading: true,
-        loadingError: false,
         selectedRegion: action.payload,
         selectedCountry: null,
+        countryOptions: [],
       };
     }
     case countryActions.COUNTRIES_LOAD_SUCCESS: {
       return {
         ...state,
         loading: false,
-        // TODO: make sure the reference can stay the same
-        countries: action.payload,
+        loadingError: false,
+        countries: [...action.payload],
         countryOptions: fromServices.extractCountryOptions(action.payload),
       };
     }
     case countryActions.COUNTRIES_LOAD_ERROR: {
       return {
         ...state,
-        loading: true,
+        loading: false,
         loadingError: true,
+        selectedRegion: null,
+        selectedCountry: null,
       };
     }
     case countryActions.COUNTRY_SELECT: {
@@ -83,3 +85,4 @@ export const getSelectedRegion = (state: CountriesState) => state.selectedRegion
 export const getSelectedCountry = (state: CountriesState) => state.selectedCountry;
 // TODO: implement for a loader indicator
 export const getCountriesLoading = (state: CountriesState) => state.loading;
+export const getError = (state: CountriesState) => state.loadingError;

@@ -1,13 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import { ActionReducerMap, createSelector } from '@ngrx/store';
-import * as fromCountries from './countries.reducer';
+import * as fromCountriesReducer from './countries.reducer';
 
 export interface AppState {
-  countryViewFeature: fromCountries.CountriesState;
+  countryViewFeature: fromCountriesReducer.CountriesState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  countryViewFeature: fromCountries.countriesReducer,
+  countryViewFeature: fromCountriesReducer.countriesReducer,
 };
 
 
@@ -17,20 +17,25 @@ export const selectFeature = (state: AppState) => state.countryViewFeature;
 
 export const selectRegions = createSelector(
   selectFeature,
-  fromCountries.getRegionOptions,
+  fromCountriesReducer.getRegionOptions,
 );
 
 export const selectCountryOptions = createSelector(
   selectFeature,
-  fromCountries.getCountryOptions,
+  fromCountriesReducer.getCountryOptions,
 );
 
 export const selectCountry = createSelector(
   selectFeature,
-  fromCountries.getSelectedCountry,
+  fromCountriesReducer.getSelectedCountry,
 );
 
 export const selectRegion = createSelector(
   selectFeature,
-  fromCountries.getSelectedRegion,
+  fromCountriesReducer.getSelectedRegion,
+);
+
+export const selectError = createSelector(
+  selectFeature,
+  fromCountriesReducer.getError,
 );
