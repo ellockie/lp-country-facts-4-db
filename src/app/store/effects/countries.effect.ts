@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { map, catchError, switchMap } from 'rxjs/operators';
+import {
+  map, catchError, switchMap, shareReplay,
+} from 'rxjs/operators';
 
 import * as fromServices from '../../services';
 import * as countryActions from '../actions/countries.actions';
@@ -21,6 +23,8 @@ export default class CountriesEffect {
   loadCountries$ = this.actions$
     .pipe(
       ofType(countryActions.LOAD_COUNTRIES),
+      // Caching attempt
+      shareReplay(1),
       switchMap((action: LoadCountriesForRegion) => this.countriesService
         .getCountriesForRegion(action.payload)
         .pipe(
