@@ -83,5 +83,6 @@ export const getRegionOptions = (state: CountriesState) => state.regionOptions;
 export const getCountryOptions = (state: CountriesState) => state.countryOptions;
 export const getSelectedRegion = (state: CountriesState) => state.selectedRegion;
 export const getSelectedCountry = (state: CountriesState) => state.selectedCountry;
+export const getFlag = (state: CountriesState) => (state.selectedCountry ? state.selectedCountry.flag : null);
 export const getLoadingInProgress = (state: CountriesState) => state.loading;
 export const getError = (state: CountriesState) => state.loadingError;

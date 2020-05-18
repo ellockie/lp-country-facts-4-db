@@ -10,11 +10,11 @@
     </div>
     <div class="definition-row">
       <dt>population:</dt>
-      <dd>{{(country$ | async).population}}</dd>
+      <dd>{{((country$ | async).population).toLocaleString()}}</dd>
     </div>
     <div class="definition-row">
       <dt>currencies:</dt>
-      <dd>{{(country$ | async).currencies[0].name}}</dd>
+      <dd>{{((country$ | async).currencies.map(getCurrencyName).join(", "))}}</dd>
     </div>
     <div class="definition-row">
       <dt>flag:</dt>

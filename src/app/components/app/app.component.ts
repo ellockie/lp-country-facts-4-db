@@ -16,9 +16,12 @@ export default class AppComponent implements OnInit {
 
   loadingInProgress$: Observable<boolean>;
 
+  flag$: Observable<string>;
+
   constructor(private store: Store<fromStore.AppState>) {}
 
   ngOnInit(): void {
     this.loadingInProgress$ = this.store.select(fromStore.selectLoading);
+    this.flag$ = this.store.select(fromStore.selectFlag);
   }
 }

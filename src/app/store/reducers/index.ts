@@ -43,3 +43,8 @@ export const selectLoading = createSelector(
   selectFeature,
   fromCountriesReducer.getLoadingInProgress,
 );
+
+export const selectFlag = createSelector(
+  selectFeature,
+  fromCountriesReducer.getFlag,
+);

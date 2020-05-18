@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import * as fromStore from '../../store';
 
 import { Country } from '../../models/country.model';
+import { Currency } from '../../models/currency.model';
 
 
 @Component({
@@ -26,4 +27,6 @@ export default class AppCountryInfoComponent implements OnInit {
     this.region$ = this.store.select(fromStore.selectRegion);
     this.loadingError = this.store.select(fromStore.selectError);
   }
+
+  getCurrencyName(currency: Currency) { return currency.name; }
 }
