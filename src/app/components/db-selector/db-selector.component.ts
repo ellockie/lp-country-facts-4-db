@@ -11,7 +11,7 @@ import { AreaSelectorOption } from '../../models/display.model';
  * @title General select control
  */
 @Component({
-  selector: 'db-selector',
+  selector: 'app-selector',
   templateUrl: './db-selector.component.html',
 })
 export default class AppDbSelectorComponent {

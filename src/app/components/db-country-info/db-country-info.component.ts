@@ -8,7 +8,7 @@ import { Country } from '../../models/country.model';
 
 
 @Component({
-  selector: 'db-country-info',
+  selector: 'app-country-info',
   templateUrl: './db-country-info.component.html',
 })
 export default class DbCountryInfoComponent implements OnInit {

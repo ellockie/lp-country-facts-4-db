@@ -1,6 +1,6 @@
-<db-selector
+<app-selector
   [label]="label"
   [items]="(countries$ | async)"
   [disabled]="!(countries$ | async) || !(countries$ | async).length"
   (selectionChange)="onRegionChanged($event)"
-></db-selector>
+></app-selector>

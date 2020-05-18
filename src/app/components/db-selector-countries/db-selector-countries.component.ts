@@ -8,7 +8,7 @@ import * as fromStore from '../../store';
 
 
 @Component({
-  selector: 'db-selector-countries',
+  selector: 'app-selector-countries',
   templateUrl: './db-selector-countries.component.html',
 })
 export default class DbSelectorCountriesComponent implements OnInit {
