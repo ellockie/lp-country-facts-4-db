@@ -12,6 +12,6 @@ export interface Country {
 }
 
 export interface CountriesByRegions {
-  asia: Country[],
+  asia: Country[];
   europe: Country[];
 }
