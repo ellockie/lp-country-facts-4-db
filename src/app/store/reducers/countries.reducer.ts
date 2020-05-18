@@ -1,12 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
 import * as countryActions from '../actions';
-import { Country } from '../../models/country.model';
+import { Country, CountriesByRegions } from '../../models/country.model';
 import { AreaSelectorOption } from '../../models/display.model';
 import * as fromServices from '../../services';
 
 
 export interface CountriesState {
   countries: Country[];
+  countriesByRegions: CountriesByRegions;
   regionOptions: AreaSelectorOption[];
   countryOptions: AreaSelectorOption[];
   selectedRegion: string;
@@ -18,6 +19,7 @@ export interface CountriesState {
 
 export const initialState: CountriesState = {
   countries: [],
+  countriesByRegions: { asia: null, europe: null },
   regionOptions: [
     { value: 'asia', viewValue: 'Asia' },
     { value: 'europe', viewValue: 'Europe' },
@@ -54,8 +56,10 @@ export function countriesReducer(
         ...state,
         loading: false,
         loadingError: false,
-        countries: [...action.payload],
-        countryOptions: fromServices.extractCountryOptions(action.payload),
+        countries: action.payload.countries,
+        countriesByRegions: { ...state.countriesByRegions, [action.payload.region]: action.payload.countries },
+        selectedCountry: null,
+        countryOptions: fromServices.extractCountryOptions(action.payload.countries),
       };
     }
     case countryActions.COUNTRIES_LOAD_ERROR: {

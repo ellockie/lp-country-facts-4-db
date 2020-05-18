@@ -10,3 +10,8 @@ export interface Country {
   currencies: Currency[];
   flag: string;
 }
+
+export interface CountriesByRegions {
+  asia: Country[],
+  europe: Country[];
+}

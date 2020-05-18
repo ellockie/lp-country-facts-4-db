@@ -17,7 +17,7 @@ export class LoadCountriesForRegion implements Action {
 export class CountriesLoadSuccess implements Action {
   readonly type = COUNTRIES_LOAD_SUCCESS;
 
-  constructor(public payload: Country[]) {}
+  constructor(public payload: {region: string; countries: Country[]}) {}
 }
 
 export class CountriesLoadError implements Action {
