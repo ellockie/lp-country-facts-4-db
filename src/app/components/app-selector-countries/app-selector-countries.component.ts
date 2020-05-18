@@ -16,7 +16,7 @@ export default class AppSelectorCountriesComponent implements OnInit {
 
   label: string = selectorLabels.country;
 
-  constructor(private store: Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) {}
 
   ngOnInit(): void {
     this.countries$ = this.store.select(fromStore.selectCountryOptions);

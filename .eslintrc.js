@@ -19,7 +19,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-   "import/extensions": [
+    "import/extensions": [
       2,
       "ignorePackages",
       {
@@ -28,8 +28,12 @@ module.exports = {
         "ts": "never",
         "tsx": "never"
       },
-   ],
-   "linebreak-style": [1, "windows"],
+    ],
+    "linebreak-style": [1, "windows"],
+    "no-empty-function": 0,
+    "no-useless-constructor": 0,
+    "no-unused-vars": 0,
+    "import/prefer-default-export": 0,
   },
   settings: {
     "import/resolver": {

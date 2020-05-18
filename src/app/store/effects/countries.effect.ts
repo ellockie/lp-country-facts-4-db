@@ -11,7 +11,6 @@ import { LoadCountriesForRegion } from '../actions';
 
 @Injectable()
 export default class CountriesEffect {
-  // eslint-disable-next-line no-useless-constructor
   constructor(
     private actions$: Actions,
     private countriesService: fromServices.CountriesService,

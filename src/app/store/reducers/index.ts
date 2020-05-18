@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { ActionReducerMap, createSelector } from '@ngrx/store';
 import * as fromCountriesReducer from './countries.reducer';
 

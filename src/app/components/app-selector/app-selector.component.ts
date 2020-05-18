@@ -1,7 +1,7 @@
 import {
   Component, Input, Output, EventEmitter, OnChanges, SimpleChanges,
 } from '@angular/core';
-// eslint-disable-next-line no-unused-vars
+
 import { MatSelectChange } from '@angular/material/select';
 
 import { AreaSelectorOption } from '../../models/display.model';

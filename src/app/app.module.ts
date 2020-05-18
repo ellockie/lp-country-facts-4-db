@@ -57,4 +57,4 @@ import { reducers, effects } from './store';
   ],
   bootstrap: [AppComponent],
 })
-export default class AppModule { }
+export default class AppModule {}

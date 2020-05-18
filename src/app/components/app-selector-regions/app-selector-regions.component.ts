@@ -16,8 +16,7 @@ export default class AppSelectorRegionsComponent implements OnInit {
 
   label: string = selectorLabels.region;
 
-  // eslint-disable-next-line no-unused-vars,no-useless-constructor,no-empty-function
-  constructor(private store: Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) {}
 
   ngOnInit(): void {
     this.regions$ = this.store.select(fromStore.selectRegions);

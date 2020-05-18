@@ -19,7 +19,7 @@ export default class AppCountryInfoComponent implements OnInit {
 
   loadingError: Observable<boolean>;
 
-  constructor(private store: Store<fromStore.AppState>) { }
+  constructor(private store: Store<fromStore.AppState>) {}
 
   ngOnInit(): void {
     this.country$ = this.store.select(fromStore.selectCountry);
