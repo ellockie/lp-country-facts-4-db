@@ -1,9 +1,31 @@
 <div *ngIf="(country$ | async)">
-  <div>name: {{(country$ | async).name}}</div>
-  <div>capital: {{(country$ | async).capital}}</div>
-  <div>population: {{(country$ | async).population}}</div>
-  <div>currencies: {{(country$ | async).currencies[0].name}}</div>
-  <div>flag: <img src="{{(country$ | async).flag}}" style="width: 88px;"/></div>
+  <dl>
+    <div class="definition-row">
+      <dt>name:</dt>
+      <dd>{{(country$ | async).name}}</dd>
+    </div>
+    <div class="definition-row">
+      <dt>capital:</dt>
+      <dd>{{(country$ | async).capital}}</dd>
+    </div>
+    <div class="definition-row">
+      <dt>population:</dt>
+      <dd>{{(country$ | async).population}}</dd>
+    </div>
+    <div class="definition-row">
+      <dt>currencies:</dt>
+      <dd>{{(country$ | async).currencies[0].name}}</dd>
+    </div>
+    <div class="definition-row">
+      <dt>flag:</dt>
+      <dd>
+        <img
+          class="flag"
+          src="{{(country$ | async).flag}}"
+        />
+      </dd>
+    </div>
+  </dl>
 </div>
 
 <ng-container *ngIf="(loadingError | async) === false">
