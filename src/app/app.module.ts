@@ -15,11 +15,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import AppDbSelectorComponent from './components/db-selector/db-selector.component';
-import DbCountryInfoComponent from './components/db-country-info/db-country-info.component';
+import AppDbSelectorComponent from './components/app-selector/app-selector.component';
+import AppCountryInfoComponent from './components/app-country-info/app-country-info.component';
 import AppComponent from './components/app/app.component';
-import DbSelectorCountriesComponent from './components/db-selector-countries/db-selector-countries.component';
-import DbSelectorRegionsComponent from './components/db-selector-regions/db-selector-regions.component';
+import AppSelectorCountriesComponent from './components/app-selector-countries/app-selector-countries.component';
+import AppSelectorRegionsComponent from './components/app-selector-regions/app-selector-regions.component';
 
 import { CountriesService } from './services';
 import { reducers, effects } from './store';
@@ -29,9 +29,9 @@ import { reducers, effects } from './store';
   declarations: [
     AppComponent,
     AppDbSelectorComponent,
-    DbCountryInfoComponent,
-    DbSelectorRegionsComponent,
-    DbSelectorCountriesComponent,
+    AppCountryInfoComponent,
+    AppSelectorRegionsComponent,
+    AppSelectorCountriesComponent,
   ],
   imports: [
     CommonModule,

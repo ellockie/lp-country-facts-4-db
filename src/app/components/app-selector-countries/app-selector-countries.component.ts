@@ -9,9 +9,9 @@ import * as fromStore from '../../store';
 
 @Component({
   selector: 'app-selector-countries',
-  templateUrl: './db-selector-countries.component.html',
+  templateUrl: './app-selector-countries.component.html',
 })
-export default class DbSelectorCountriesComponent implements OnInit {
+export default class AppSelectorCountriesComponent implements OnInit {
   countries$: Observable<AreaSelectorOption[]>;
 
   label: string = selectorLabels.country;

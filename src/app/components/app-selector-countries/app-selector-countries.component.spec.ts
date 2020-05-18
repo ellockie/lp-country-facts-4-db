@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DbSelectorCountriesComponent } from './db-selector-countries.component';
+import { AppSelectorCountriesComponent } from './app-selector-countries.component';
 
 describe('DbSelectorCountriesComponent', () => {
   let component: DbSelectorCountriesComponent;
@@ -8,9 +8,9 @@ describe('DbSelectorCountriesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DbSelectorCountriesComponent ]
+      declarations: [DbSelectorCountriesComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

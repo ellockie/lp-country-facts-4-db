@@ -9,9 +9,9 @@ import { Country } from '../../models/country.model';
 
 @Component({
   selector: 'app-country-info',
-  templateUrl: './db-country-info.component.html',
+  templateUrl: './app-country-info.component.html',
 })
-export default class DbCountryInfoComponent implements OnInit {
+export default class AppCountryInfoComponent implements OnInit {
   country$: Observable<Country>;
 
   constructor(private store: Store<fromStore.AppState>) { }

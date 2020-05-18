@@ -12,7 +12,7 @@ import { AreaSelectorOption } from '../../models/display.model';
  */
 @Component({
   selector: 'app-selector',
-  templateUrl: './db-selector.component.html',
+  templateUrl: './app-selector.component.html',
 })
 export default class AppDbSelectorComponent {
   @Input() label: string;

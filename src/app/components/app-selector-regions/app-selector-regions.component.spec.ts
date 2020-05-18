@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DbSelectorRegionsComponent } from './db-selector-regions.component';
+import { AppSelectorRegionsComponent } from './app-selector-regions.component';
 
 describe('DbSelectorRegionsComponent', () => {
   let component: DbSelectorRegionsComponent;
