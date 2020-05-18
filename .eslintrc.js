@@ -20,7 +20,7 @@ module.exports = {
   ],
   rules: {
    "import/extensions": [
-      "error",
+      2,
       "ignorePackages",
       {
         "js": "never",
@@ -29,7 +29,7 @@ module.exports = {
         "tsx": "never"
       },
    ],
-   "linebreak-style": ["warning", "windows"],
+   "linebreak-style": [1, "windows"],
   },
   settings: {
     "import/resolver": {
