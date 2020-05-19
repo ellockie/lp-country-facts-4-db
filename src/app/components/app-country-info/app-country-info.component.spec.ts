@@ -1,15 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { provideMockStore } from '@ngrx/store/testing';
 import AppCountryInfoComponent from './app-country-info.component';
+import { AppState } from '../../store/reducers';
+import { initialState } from '../../store/reducers/countries.reducer';
 
-describe('DbCountryInfoComponent', () => {
-  let component: DbCountryInfoComponent;
-  let fixture: ComponentFixture<DbCountryInfoComponent>;
+
+describe('AppCountryInfoComponent', () => {
+  let component: AppCountryInfoComponent;
+  let fixture: ComponentFixture<AppCountryInfoComponent>;
+  const initState: AppState = { countryViewFeature: { ...initialState } };
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppCountryInfoComponent],
-    })
+    TestBed
+      .configureTestingModule({
+        declarations: [AppCountryInfoComponent],
+        providers: [provideMockStore({ initialState: initState })],
+      })
       .compileComponents();
   }));
 

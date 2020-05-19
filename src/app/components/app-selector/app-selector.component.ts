@@ -14,7 +14,7 @@ import { AreaSelectorOption } from '../../models/display.model';
   selector: 'app-selector',
   templateUrl: './app-selector.component.html',
 })
-export default class AppDbSelectorComponent implements OnChanges {
+export default class AppSelectorComponent implements OnChanges {
   @Input() label: string;
 
   @Input() items: AreaSelectorOption[];

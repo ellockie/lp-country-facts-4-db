@@ -15,9 +15,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import AppDbSelectorComponent from './components/app-selector/app-selector.component';
-import AppCountryInfoComponent from './components/app-country-info/app-country-info.component';
 import AppComponent from './components/app/app.component';
+import AppSelectorComponent from './components/app-selector/app-selector.component';
+import AppCountryInfoComponent from './components/app-country-info/app-country-info.component';
 import AppSelectorCountriesComponent from './components/app-selector-countries/app-selector-countries.component';
 import AppSelectorRegionsComponent from './components/app-selector-regions/app-selector-regions.component';
 
@@ -28,7 +28,7 @@ import { reducers, effects } from './store';
 @NgModule({
   declarations: [
     AppComponent,
-    AppDbSelectorComponent,
+    AppSelectorComponent,
     AppCountryInfoComponent,
     AppSelectorRegionsComponent,
     AppSelectorCountriesComponent,
