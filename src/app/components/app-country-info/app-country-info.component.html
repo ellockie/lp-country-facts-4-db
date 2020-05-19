@@ -1,23 +1,23 @@
 <div *ngIf="(country$ | async)">
   <dl>
     <div class="definition-row">
-      <dt>name:</dt>
+      <dt>name</dt>
       <dd>{{(country$ | async).name}}</dd>
     </div>
     <div class="definition-row">
-      <dt>capital:</dt>
+      <dt>capital</dt>
       <dd>{{(country$ | async).capital}}</dd>
     </div>
     <div class="definition-row">
-      <dt>population:</dt>
+      <dt>population</dt>
       <dd>{{((country$ | async).population).toLocaleString()}}</dd>
     </div>
     <div class="definition-row">
-      <dt>currencies:</dt>
+      <dt>{{((country$ | async).currencies.length > 1 ? 'currencies' : 'currency')}}</dt>
       <dd>{{((country$ | async).currencies.map(getCurrencyName).join(", "))}}</dd>
     </div>
     <div class="definition-row">
-      <dt>flag:</dt>
+      <dt>flag</dt>
       <dd>
         <img
           class="flag"

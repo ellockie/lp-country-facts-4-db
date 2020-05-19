@@ -1,5 +1,7 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+@materialThemeColor: #673ab7;
+
 h1,
 h2 {
   margin: 8px 0;
@@ -17,6 +19,13 @@ h2 {
   color: white;
   font-weight: 600;
   padding-left: 22px;
+  background-size: 34px;
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: center;
+  background-origin: content-box;
+  background-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22155%22%20height%3D%22155%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22m%201%2C1%20h%20148%20v%20148%20h%20-148%20z%20m%2021%2C21%20v%20107%20h%20107%20v%20-107%20z%20m%2068%2C15%20h%2027%20l%20-56%2C77%20h%20-27%20z%20%22%20style%3D%22fill%3A%20%23338fea%3B%20fill-rule%3A%20evenodd%3B%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 
 .content {
@@ -32,6 +41,12 @@ h2 {
   max-width: 888px;
   margin-left: auto;
   margin-right: auto;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
+  left: 0;
+  right: 0;
 }
 
 mat-grid-list {
@@ -43,11 +58,25 @@ mat-card-content {
 }
 
 mat-card {
-  min-height: 366px;
+  min-height: 464px;
+  margin-top: 11%;
+  margin-bottom: 22%;
+  box-shadow:
+    0 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px -1px 2px rgba(0, 0, 0, 0.04),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 188px 111px rgba(255, 255, 255, 0.2),
+    0px 1px 88px 44px rgba(255, 255, 255, 0.13),
+    0px 1px 22px rgba(255, 255, 255, 1) !important;
 }
 
 mat-card-title {
   margin-bottom: 30px;
+  font-size: 32px !important;
+  color: #1a76d2;
+  height: 25px;
+  padding-top: 22px;
 }
 
 .mat-card .mat-divider-horizontal {
@@ -63,8 +92,10 @@ mat-card-title {
   padding-left: 0;
 }
 
+#background-image--db-logo,
 #background-image--vector,
-#background-image--gradient {
+#background-image--gradient,
+#background-image--fade-wall {
   position: fixed;
   top: 0;
   left: 0;
@@ -73,15 +104,38 @@ mat-card-title {
   min-height: 100%;
 }
 
+#background-image--db-logo {
+  transform: rotate3d(1, 1, 1, -12deg) scale(1.2);
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22155%22%20height%3D%22155%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22m%201%2C1%20h%20148%20v%20148%20h%20-148%20z%20m%2021%2C21%20v%20107%20h%20107%20v%20-107%20z%20m%2068%2C15%20h%2027%20l%20-56%2C77%20h%20-27%20z%20%22%20style%3D%22fill%3A%23eef%3B%20fill-rule%3Aevenodd%3B%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-size: 88px;
+  opacity: 1;
+  background-color: white;
+}
+
 #background-image--gradient {
   height: 100%;
   position: absolute;
   width: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 67%, rgba(255, 255, 255, 0.8) 100%);
+  background: linear-gradient(90deg,
+  rgba(255, 255, 255, 0.7) 0%,
+  rgba(255, 255, 255, 0.88) 33%,
+  rgba(255, 255, 255, 0.88) 67%,
+  rgba(255, 255, 255, 0.7) 100%);
+}
+
+#background-image--fade-wall {
+  background-color: white;
+}
+
+.invisible {
+  opacity: 0 !important;
+  transition: opacity 1s;
+  transition-timing-function: ease-in-out;
 }
 
 mat-progress-bar {
   visibility: hidden;
+  position: absolute;
 }
 
 mat-progress-bar.mat-progress-bar--visible {

@@ -1,9 +1,10 @@
 .message-container,
 .message-container--error {
-  min-height: 188px;
+  min-height: 231px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #707070;
 }
 
 .message-container--error {
@@ -15,20 +16,32 @@
   min-height: 2em;
 }
 
+dl {
+  padding-top: 10px;
+}
+
+// Country name
+.definition-row:first-child {
+  dd {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
 dt {
-  width: 204px;
+  width: 201px;
   text-align: right;
   font-weight: bold;
   display: inline-block;
 }
 
 dd {
-  margin-left: 30px;
+  margin-left: 32px;
   display: inline-block;
 }
 
 img.flag {
-  height: 88px;
+  height: 144px;
   border: 1px solid #d4d4d4;
   box-shadow: 2px 5px 13px #adadad;
 }
