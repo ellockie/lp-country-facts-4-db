@@ -64,11 +64,12 @@ mat-card {
   box-shadow:
     0 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px -1px 2px rgba(0, 0, 0, 0.04),
+    0px -1px 2px 0px rgba(0, 0, 0, 0.04),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 44px 0px rgba(117, 117, 117, .3),
     0px 1px 188px 111px rgba(255, 255, 255, 0.2),
     0px 1px 88px 44px rgba(255, 255, 255, 0.13),
-    0px 1px 22px rgba(255, 255, 255, 1) !important;
+    0px 1px 22px #ffffff !important;
 }
 
 mat-card-title {
@@ -94,43 +95,41 @@ mat-card-title {
 
 #background-image--db-logo,
 #background-image--vector,
-#background-image--gradient,
-#background-image--fade-wall {
+#background-image--gradient {
   position: fixed;
   top: 0;
   left: 0;
   /* To preserve aspect ratio */
   min-width: 100%;
   min-height: 100%;
+  transform: rotate3d(1, 1, 1, -12deg) scale(1.2);
 }
 
 #background-image--db-logo {
-  transform: rotate3d(1, 1, 1, -12deg) scale(1.2);
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22155%22%20height%3D%22155%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22m%201%2C1%20h%20148%20v%20148%20h%20-148%20z%20m%2021%2C21%20v%20107%20h%20107%20v%20-107%20z%20m%2068%2C15%20h%2027%20l%20-56%2C77%20h%20-27%20z%20%22%20style%3D%22fill%3A%23eef%3B%20fill-rule%3Aevenodd%3B%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22155%22%20height%3D%22155%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22m%201%2C1%20h%20148%20v%20148%20h%20-148%20z%20m%2021%2C21%20v%20107%20h%20107%20v%20-107%20z%20m%2068%2C15%20h%2027%20l%20-56%2C77%20h%20-27%20z%20%22%20style%3D%22fill%3A%2383c1fd%3B%20fill-rule%3Aevenodd%3B%22%2F%3E%0A%3C%2Fsvg%3E");
   background-size: 88px;
-  opacity: 1;
   background-color: white;
+  opacity: 1;
+  transition: opacity 1s;
+  transition-timing-function: ease-in-out;
 }
 
 #background-image--gradient {
   height: 100%;
   position: absolute;
   width: 100%;
-  background: linear-gradient(90deg,
-  rgba(255, 255, 255, 0.7) 0%,
-  rgba(255, 255, 255, 0.88) 33%,
-  rgba(255, 255, 255, 0.88) 67%,
-  rgba(255, 255, 255, 0.7) 100%);
-}
-
-#background-image--fade-wall {
-  background-color: white;
+  transform: initial;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.88) 33%,
+    rgba(255, 255, 255, 0.88) 67%,
+    rgba(255, 255, 255, 0.7) 100%,
+  );
 }
 
 .invisible {
   opacity: 0 !important;
-  transition: opacity 1s;
-  transition-timing-function: ease-in-out;
 }
 
 mat-progress-bar {
