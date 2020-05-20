@@ -1,6 +1,8 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+// For reference if needed in future
 @materialThemeColor: #673ab7;
+
 
 h1,
 h2 {
@@ -40,11 +42,8 @@ h2 {
 
 .main-container {
   max-width: 888px;
-  margin-left: auto;
-  margin-right: auto;
   height: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   justify-content: center;
   left: 0;
   right: 0;
@@ -111,8 +110,7 @@ mat-card-title {
   background-size: 88px;
   background-color: white;
   opacity: 1;
-  transition: opacity 1s;
-  transition-timing-function: ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 #background-image--gradient {
