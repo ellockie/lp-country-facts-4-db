@@ -64,6 +64,6 @@ describe('AppComponent', () => {
   it('should render title', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content mat-card-title').textContent).toContain('Country Facts');
+    expect(compiled.querySelector('.content mat-card-title').textContent).toContain('CountryFacts');
   });
 });
