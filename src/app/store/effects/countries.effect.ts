@@ -27,6 +27,7 @@ export default class CountriesEffect {
           map((countries) => new countryActions.CountriesLoadSuccess({
             region: action.payload,
             countries,
+            countryOptions: fromServices.extractCountryOptions(countries),
           })),
           catchError((error) => of(new countryActions.CountriesLoadError(error))),
         )),

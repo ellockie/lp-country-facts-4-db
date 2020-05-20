@@ -1,8 +1,6 @@
-import { createReducer, on } from '@ngrx/store';
 import * as countryActions from '../actions';
 import { Country, CountriesByRegions } from '../../models/country.model';
 import { AreaSelectorOption } from '../../models/display.model';
-import * as fromServices from '../../services';
 
 
 export interface CountriesState {
@@ -32,11 +30,6 @@ export const initialState: CountriesState = {
   loadingError: false,
 };
 
-// TODO: move to a service
-const selectCountry = (countries: Country[], countryId: string) => countries
-  .find((country) => country.alpha3Code === countryId);
-
-// TODO: use createReducer
 export function countriesReducer(
   state = initialState,
   action: countryActions.AnyCountryAction,
@@ -62,7 +55,7 @@ export function countriesReducer(
           [action.payload.region]: action.payload.countries,
         },
         selectedCountry: null,
-        countryOptions: fromServices.extractCountryOptions(action.payload.countries),
+        countryOptions: action.payload.countryOptions,
       };
     }
     case countryActions.COUNTRIES_LOAD_ERROR: {
@@ -75,9 +68,11 @@ export function countriesReducer(
       };
     }
     case countryActions.COUNTRY_SELECT: {
+      const countryId = action.payload;
       return {
         ...state,
-        selectedCountry: { ...selectCountry(state.countries, action.payload) },
+        selectedCountry: state.countries
+          .find((country) => country.alpha3Code === countryId),
       };
     }
     default: {
@@ -92,7 +87,6 @@ export const getSelectedRegion = (state: CountriesState) => state.selectedRegion
 export const getSelectedCountry = (state: CountriesState) => state.selectedCountry;
 export const getFlag = (state: CountriesState) => (state.selectedCountry
   ? state.selectedCountry.flag
-  : null
-);
+  : null);
 export const getLoadingInProgress = (state: CountriesState) => state.loading;
 export const getError = (state: CountriesState) => state.loadingError;

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { AreaSelectorOption, selectorLabels } from '../../models/display.model';
 import * as fromStore from '../../store';
+import * as fromServices from '../../services';
 
 
 @Component({
@@ -32,6 +33,7 @@ export default class AppSelectorRegionsComponent implements OnInit {
           this.store.dispatch(new fromStore.CountriesLoadSuccess({
             region: regionId,
             countries,
+            countryOptions: fromServices.extractCountryOptions(countries),
           }));
         } else {
           this.store.dispatch(new fromStore.LoadCountriesForRegion(regionId));
