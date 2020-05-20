@@ -18,14 +18,14 @@ export default class AppCountryInfoComponent implements OnInit {
 
   country$: Observable<Country>;
 
-  loadingError: Observable<boolean>;
+  loadingError$: Observable<boolean>;
 
   constructor(private store: Store<fromStore.AppState>) {}
 
   ngOnInit(): void {
     this.country$ = this.store.select(fromStore.selectCountry);
     this.region$ = this.store.select(fromStore.selectRegion);
-    this.loadingError = this.store.select(fromStore.selectError);
+    this.loadingError$ = this.store.select(fromStore.selectError);
   }
 
   getCurrencyName(currency: Currency) { return currency.name; }

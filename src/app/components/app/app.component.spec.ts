@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
@@ -19,6 +19,7 @@ import { initialState } from '../../store/reducers/countries.reducer';
 
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
   const initState: AppState = { countryViewFeature: { ...initialState } };
 
   beforeEach(async(() => {
@@ -46,20 +47,21 @@ describe('AppComponent', () => {
       .compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it('should have as title \'country-facts\'', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('country-facts');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content mat-card-title').textContent).toContain('Country Facts');
