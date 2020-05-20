@@ -36,6 +36,23 @@ describe('AppCountryInfoComponent', () => {
     // const effects = TestBed.inject<CountriesEffect>(CountriesEffect);
 
 
+    // TestBed.configureTestingModule({
+    //   providers: [
+    //     CountriesEffect,
+    //     provideMockActions(() => actions$),
+    //     // mock the Store and the selectors that are used within the Effect
+    //     provideMockStore({
+    //       selectors: [
+    //         {
+    //           selector: selectCustomers,
+    //           value: {
+    //             Bob: { name: 'Bob' },
+    //           },
+    //         },
+    //       ],
+    //     }),
+    //   ],
+    // });
   }));
 
   beforeEach(() => {
