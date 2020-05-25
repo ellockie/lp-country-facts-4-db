@@ -16,7 +16,7 @@ For the select controls a single, generic, purely presentational component was u
 
 In case of a failing API, there will be a simple message displayed.
 
-There is a suite of 12, mostly "sanity check" tests.
+There is a suite of 16 tests.
 
 The `css / less` rules naming mostly followed the `BEM` recommendations, and the structure was kept as flat as possible, to be also aligned with these suggestions.
 
