@@ -4,7 +4,7 @@ import {
 
 import { MatSelectChange } from '@angular/material/select';
 
-import { AreaSelectorOption } from '../../models/display.model';
+import { AreaSelectorOption } from '../../models';
 
 
 /**
@@ -25,7 +25,7 @@ export default class AppSelectorComponent implements OnChanges {
 
   selectedItem: string = null;
 
-  // Resests the selectedItem item on items change
+  // Resets the selectedItem item on items change
   ngOnChanges(changes: SimpleChanges) {
     this.selectedItem = null;
   }

@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-
 import { take } from 'rxjs/operators';
-import { AreaSelectorOption, selectorLabels } from '../../models/display.model';
+
+import { AreaSelectorOption, selectorLabels, Region } from '../../models';
 import * as fromStore from '../../store';
 import * as fromServices from '../../services';
 
@@ -24,7 +24,7 @@ export default class AppSelectorRegionsComponent implements OnInit {
     this.regions$ = this.store.select(fromStore.selectRegions);
   }
 
-  onRegionChanged(regionId: string) {
+  onRegionChanged(regionId: Region) {
     this.store
       .pipe(take(1))
       .subscribe((s) => {

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { Country } from '../models/country.model';
+import { Country } from '../models';
 import { API_URL } from '../assets/config';
 
 

@@ -4,8 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as fromStore from '../../store';
 
-import { Country } from '../../models/country.model';
-import { Currency } from '../../models/currency.model';
+import { Country, Currency, Regions } from '../../models';
 
 
 @Component({
@@ -14,7 +13,7 @@ import { Currency } from '../../models/currency.model';
   styleUrls: ['./app-country-info.component.less'],
 })
 export default class AppCountryInfoComponent implements OnInit {
-  region$: Observable<string>;
+  region$: Observable<Regions>;
 
   country$: Observable<Country>;
 

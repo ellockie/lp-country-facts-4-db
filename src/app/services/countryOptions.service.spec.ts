@@ -1,6 +1,6 @@
 import { extractCountryOptions } from './countryOptions.service';
-import { Country } from '../models/country.model';
-import { AreaSelectorOption } from '../models/display.model';
+import { Country, AreaSelectorOption } from '../models';
+
 
 const mockCountries: Country[] = [{
   alpha3Code: 'ABC',

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { AreaSelectorOption, selectorLabels } from '../../models/display.model';
+import { AreaSelectorOption, selectorLabels } from '../../models';
 import * as fromStore from '../../store';
 
 

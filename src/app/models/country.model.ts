@@ -1,4 +1,5 @@
 import { Currency } from './currency.model';
+import { Regions } from './region.model';
 
 
 export interface Country {
@@ -12,6 +13,6 @@ export interface Country {
 }
 
 export interface CountriesByRegions {
-  asia: Country[];
-  europe: Country[];
+  [Regions.asia]: Country[];
+  [Regions.europe]: Country[];
 }

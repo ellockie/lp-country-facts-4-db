@@ -1,6 +1,7 @@
 import * as countryActions from '../actions';
-import { Country, CountriesByRegions } from '../../models/country.model';
-import { AreaSelectorOption } from '../../models/display.model';
+import {
+  Country, CountriesByRegions, AreaSelectorOption, Region, Regions,
+} from '../../models';
 
 
 export interface CountriesState {
@@ -8,7 +9,7 @@ export interface CountriesState {
   countriesByRegions: CountriesByRegions;
   regionOptions: AreaSelectorOption[];
   countryOptions: AreaSelectorOption[];
-  selectedRegion: string;
+  selectedRegion: Region;
   selectedCountry: Country;
   loading: boolean;
   loaded: boolean;
@@ -17,7 +18,7 @@ export interface CountriesState {
 
 export const initialState: CountriesState = {
   countries: [],
-  countriesByRegions: { asia: null, europe: null },
+  countriesByRegions: { [Regions.asia]: null, [Regions.europe]: null },
   regionOptions: [
     { value: 'asia', viewValue: 'Asia' },
     { value: 'europe', viewValue: 'Europe' },

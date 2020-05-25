@@ -1,5 +1,4 @@
-import { Country } from '../models/country.model';
-import { AreaSelectorOption } from '../models/display.model';
+import { Country, AreaSelectorOption } from '../models';
 
 
 export const extractCountryOptions = (countries: Country[]): AreaSelectorOption[] => {
