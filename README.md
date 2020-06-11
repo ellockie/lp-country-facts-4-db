@@ -8,6 +8,8 @@
 - External country facts API
 - Simple caching
 
+![Application screenshot](./screenshots/screenshot.png)
+
 ## How it works
 
 Region selector gets subscribed to the Regions's slice of state (via an appropriate selector) and get's populated with 2 hardcoded regions, that were a part of state initialisation. On user Region selection, a `LoadCountriesForRegion` action is dispatched. It triggers a **NgRx effect** to call a service wich calls the external API and returns an observable. Within effect any existing observable get unsubscribed and the effect dispatches a `CountriesLoadSuccess` action, which gets to the reducer. Reducer returns a new, updated state - with countries for the selected region, with country selector options and updates the "state-based" cache. When user selects a country, an action is dispatched, which sets the `selectedSountry` state property. A "country info" component is subscribed to that property and populates itself with data. Apart from the flag, there is also another visual effect reacting to a country selection.
